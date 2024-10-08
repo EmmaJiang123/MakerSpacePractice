@@ -45,6 +45,36 @@
 h1 {
   font-size: 24px;
   margin-bottom: 20px;
+  text-align: center;
+}
+
+/* 搜索框容器 */
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* 搜索框样式，圆角边框 */
+.search-box {
+  width: 300px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 25px; /* 圆角边框 */
+  font-size: 16px;
+  outline: none;
+}
+
+.search-box:focus {
+  border-color: #4caf50; /* 选中时边框颜色变成绿色 */
+}
+
+
+/* Check-in 列表 */
+.checkin-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .filters {
@@ -53,12 +83,54 @@ h1 {
   margin-bottom: 20px;
 }
 
+/* 每条Check-in 信息作为卡片展示 */
+.checkin-card {
+  width: 80%;
+  background-color: #f9f9f9;
+  border-radius: 10px; /* 圆角边框 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* 鼠标悬停时，高亮和放大 */
+.checkin-card:hover {
+  background-color: #e0ffe0; /* 高亮为绿色 */
+  transform: scale(1.05); /* 放大 */
+}
+
+/* Check-in 信息展示样式 */
+.checkin-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkin-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #001f3f;
+}
+
+.checkin-email {
+  font-size: 16px;
+  color: #555;
+}
+
+.checkin-time {
+  font-size: 14px;
+  color: #888;
+}
+
 input {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
   width: 300px;
 }
+
+
 
 button {
   padding: 8px 16px;

@@ -1,0 +1,99 @@
+/* .student-detail-container {
+    display: flex;
+    padding: 20px;
+  }
+  
+  .sign-in-list {
+    width: 30%;
+    background-color: #001f3f;
+    color: white;
+    padding: 20px;
+    margin-right: 20px;
+  }
+  
+  .student-info {
+    width: 70%;
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+  
+  h2 {
+    color: #001f3f;
+  }
+  
+  .info-block {
+    background-color: #001f3f;
+    color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+  }
+  
+  ul {
+    padding-left: 20px;
+  }
+  
+  ul li {
+    margin-bottom: 10px;
+  } */
+  
+
+  /* 容器布局，左侧签到列表，右侧学生信息 */
+.student-detail-container {
+    display: flex;
+    padding: 20px;
+  }
+  
+  /* 左侧签到列表 */
+  .sign-in-list {
+    width: 30%;
+    background-color: #001f3f;
+    color: white;
+    padding: 20px;
+    margin-right: 20px;
+  }
+  
+  .sign-in-list h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .sign-in-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sign-in-list li {
+    margin-bottom: 10px;
+  }
+  
+  /* 右侧学生详细信息 */
+  .student-info {
+    width: 70%;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .student-info h2 {
+    color: #001f3f;
+  }
+  
+  /* 信息块，每个部分的数据 */
+  .info-block {
+    background-color: #001f3f;
+    color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+  }
+  
+  /* 列表项样式 */
+  .info-block ul {
+    padding-left: 20px;
+  }
+  
+  .info-block ul li {
+    margin-bottom: 10px;
+  }
+  

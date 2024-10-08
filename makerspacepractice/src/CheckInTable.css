@@ -1,0 +1,56 @@
+/* 整个签到列表布局 */
+.checkin-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* 单个学生签到记录作为卡片显示 */
+  .checkin-card {
+    width: 80%;
+    background-color: #f9f9f9;
+    border-radius: 10px; /* 卡片的圆角 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    cursor: pointer;
+  }
+  
+  /* 鼠标悬停时的效果，卡片高亮和放大 */
+  .checkin-card:hover {
+    background-color: #e0ffe0; /* 背景色变成绿色 */
+    transform: scale(1.05); /* 稍微放大 */
+  }
+  
+  /* 当行被选中时，背景颜色加深 */
+  .selected-row {
+    background-color: #d0ffd0; /* 深绿色，表示选中状态 */
+  }
+  
+  /* 学生签到信息的布局 */
+  .checkin-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* 学生姓名 */
+  .checkin-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #001f3f;
+  }
+  
+  /* 学生邮箱 */
+  .checkin-email {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  /* 签到时间 */
+  .checkin-time {
+    font-size: 14px;
+    color: #888;
+  }
+  
