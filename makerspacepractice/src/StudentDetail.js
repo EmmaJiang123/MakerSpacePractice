@@ -105,6 +105,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'; // 用于获取URL中的studentId
+import Header from './Header'; // 引入Header组件
 import './StudentDetail.css'; // 引入样式
 
 const StudentDetail = () => {

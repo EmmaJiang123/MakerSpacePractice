@@ -167,3 +167,18 @@ th {
 .selected-row {
   background-color: #d3d3d3; /* 高亮选中的行 */
 }
+
+.app-container, .student-detail-container {
+  padding-top: 70px; /* 根据 header 的高度调整此数值，确保内容不会被覆盖 */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* 为了确保 header 紧贴页面顶部 */
+html, body {
+  height: 100%;
+}
