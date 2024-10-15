@@ -1,99 +1,147 @@
-/* .student-detail-container {
-    display: flex;
-    padding: 20px;
-  }
-  
-  .sign-in-list {
-    width: 30%;
-    background-color: #001f3f;
-    color: white;
-    padding: 20px;
-    margin-right: 20px;
-  }
-  
-  .student-info {
-    width: 70%;
-    background-color: #f0f0f0;
-    padding: 20px;
-  }
-  
-  h2 {
-    color: #001f3f;
-  }
-  
-  .info-block {
-    background-color: #001f3f;
-    color: white;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-  }
-  
-  ul {
-    padding-left: 20px;
-  }
-  
-  ul li {
-    margin-bottom: 10px;
-  } */
-  
+/* 让页面居中并有充足的空间 */
+.student-info-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f7fa;
+  padding: 20px;
+}
 
-  /* 容器布局，左侧签到列表，右侧学生信息 */
-.student-detail-container {
-    display: flex;
-    padding: 20px;
+/* 学生信息卡片 */
+.student-info-card {
+  background-color: white;
+  width: 60%;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .student-info-card {
+    width: 90%; /* 调整较小屏幕上的卡片宽度 */
   }
-  
-  /* 左侧签到列表 */
-  .sign-in-list {
-    width: 30%;
-    background-color: #001f3f;
-    color: white;
-    padding: 20px;
-    margin-right: 20px;
+}
+
+/* 头像和头部信息 */
+.header-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.user-icon {
+  font-size: 60px;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.header-section h2 {
+  font-size: 28px;
+  color: #001f3f;
+  margin-bottom: 5px;
+}
+
+.member-status {
+  font-size: 18px;
+  padding: 5px 10px;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.member {
+  background-color: #28a745;
+  color: white;
+}
+
+.non-member {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* 信息块样式 */
+.info-block {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+}
+
+.info-block p {
+  margin: 0;
+  font-size: 18px;
+  margin-left: 15px;
+}
+
+.info-icon {
+  font-size: 24px;
+  color: #007bff;
+}
+
+/* 列表项样式 */
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* Training Section */
+.training-section .trainings {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap; /* 允许培训卡片换行 */
+}
+
+.training-box {
+  background-color: #e0e0e0;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: calc(50% - 10px); /* 两个项目时自动调整宽度 */
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .training-box {
+    width: 100%; /* 小屏幕时培训框全宽 */
   }
-  
-  .sign-in-list h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
+}
+
+/* Badge Section */
+.badge-section .badges {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap; /* 允许badges换行 */
+}
+
+.badge-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: calc(25% - 10px); /* 四个badge时调整宽度 */
+}
+
+@media (max-width: 768px) {
+  .badge-icon {
+    width: 45%; /* 小屏幕时两个一行 */
   }
-  
-  .sign-in-list ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .sign-in-list li {
-    margin-bottom: 10px;
-  }
-  
-  /* 右侧学生详细信息 */
-  .student-info {
-    width: 70%;
-    background-color: #f0f0f0;
-    padding: 20px;
-    border-radius: 8px;
-  }
-  
-  .student-info h2 {
-    color: #001f3f;
-  }
-  
-  /* 信息块，每个部分的数据 */
-  .info-block {
-    background-color: #001f3f;
-    color: white;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-  }
-  
-  /* 列表项样式 */
-  .info-block ul {
-    padding-left: 20px;
-  }
-  
-  .info-block ul li {
-    margin-bottom: 10px;
-  }
-  
+}
+
+.badge-icon svg {
+  font-size: 40px;
+  color: #ffd700; /* 金色勋章 */
+}
+
+.badge-icon p {
+  margin-top: 5px;
+  font-size: 14px;
+  text-align: center;
+}

@@ -1,129 +1,31 @@
-// import React from 'react';
-// import { useParams } from 'react-router-dom';
-
-// const StudentDetail = () => {
-//   const { id } = useParams();
-
-//   return (
-//     <div>
-//       <h2>Student Detail for ID: {id}</h2>
-//       {/* 在这里添加更多学生详细信息 */}
-//     </div>
-//   );
-// };
-
-// export default StudentDetail;
-
-
-// import React, { useState, useEffect } from 'react';
-// import { useParams } from 'react-router-dom'; // 用于获取学生ID
-// import './StudentDetail.css'; // 样式文件
-
-// const StudentDetail = () => {
-//   const { id } = useParams(); // 获取学生ID
-//   const [studentInfo, setStudentInfo] = useState(null); // 存储学生信息
-
-//   // 模拟从数据库获取学生信息
-//   useEffect(() => {
-//     const fetchStudentData = async () => {
-//       // 假设这是从后端数据库获取的数据
-//       const data = {
-//         email: 'emily.bob@example.com',
-//         lastSignIn: '2024-09-20T09:54:20',
-//         isMember: true,
-//         tags: ['Engineering', 'Lab Access'],
-//         upcomingAppointments: ['OnceHub: 2024-09-25 10:00AM'],
-//         trainingsCompleted: ['Basic Lab Training', 'Advanced Robotics'],
-//         unicornBadgeLevel: 3,
-//       };
-//       setStudentInfo(data);
-//     };
-//     fetchStudentData();
-//   }, [id]);
-
-//   if (!studentInfo) {
-//     return <p>Loading...</p>;
-//   }
-
-//   return (
-//     <div className="student-detail-container">
-//       {/* 左侧签到列表 */}
-//       <div className="sign-in-list">
-//         <h3>Daily List of People</h3>
-//         {/* 这里可以显示签到记录 */}
-//         {/* 示例：签到列表数据 */}
-//         <ul>
-//           <li>Emily Bob - Signed in at 9:54:20 AM</li>
-//           <li>John Doe - Signed in at 9:30:10 AM</li>
-//         </ul>
-//       </div>
-
-//       {/* 右侧学生详细信息 */}
-//       <div className="student-info">
-//         <h2>{studentInfo.email}</h2>
-//         <div className="info-block">
-//           <p><strong>Last Sign In:</strong> {new Date(studentInfo.lastSignIn).toLocaleString()}</p>
-//           <p><strong>Member Status:</strong> {studentInfo.isMember ? 'Member' : 'Non-member'}</p>
-//           <p><strong>Tags:</strong> {studentInfo.tags.join(', ')}</p>
-//           <p><strong>Upcoming Appointments:</strong></p>
-//           <ul>
-//             {studentInfo.upcomingAppointments.map((appointment, index) => (
-//               <li key={index}>{appointment}</li>
-//             ))}
-//           </ul>
-//           <p><strong>All the Training Completed:</strong></p>
-//           <ul>
-//             {studentInfo.trainingsCompleted.map((training, index) => (
-//               <li key={index}>{training}</li>
-//             ))}
-//           </ul>
-//           <p><strong>Unicorn Badge Level:</strong> {studentInfo.unicornBadgeLevel}</p>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default StudentDetail;
-
-
-// import React from 'react';
-// import { useParams } from 'react-router-dom'; // 用于获取URL中的参数
-
-// const StudentDetail = () => {
-//   const { id } = useParams(); // 获取学生的 studentId
-
-//   return (
-//     <div>
-//       <h2>Student Detail for Email: {id}</h2>
-//       {/* 在这里显示更多学生的详细信息 */}
-//     </div>
-//   );
-// };
-
-// export default StudentDetail;
-
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom'; // 用于获取URL中的studentId
-import Header from './Header'; // 引入Header组件
-import './StudentDetail.css'; // 引入样式
+import { useParams } from 'react-router-dom';
+import './StudentDetail.css'; // 引入样式文件
+import { FaUserCircle, FaCrown, FaCalendarAlt, FaListAlt, FaStar, FaCertificate, FaToolbox, FaWrench, FaLaptopCode } from 'react-icons/fa'; // 使用图标库
 
 const StudentDetail = () => {
-  const { id } = useParams(); // 获取studentId（email）
+  const { id } = useParams(); // 获取学生的id
   const [studentInfo, setStudentInfo] = useState(null);
 
-  // 模拟从数据库获取学生信息
   useEffect(() => {
     const fetchStudentData = async () => {
-      // 这是从后端API获取的数据，实际应用中可以替换为真实API调用
+      // 模拟后端获取的数据，实际应用中替换为API调用
       const data = {
         email: 'emily.bob@example.com',
         lastSignIn: '2024-09-20T09:54:20',
         isMember: true,
         tags: ['Engineering', 'Lab Access'],
         upcomingAppointments: ['OnceHub: 2024-09-25 10:00AM'],
-        trainingsCompleted: ['Basic Lab Training', 'Advanced Robotics'],
-        unicornBadgeLevel: 3,
+        trainingsCompleted: [
+          { name: 'Basic Lab Training', date: 'Sep 20, 2023' },
+          { name: 'Advanced Robotics', date: 'Sep 20, 2023' },
+        ],
+        unicornBadges: [
+          { badgeName: 'Creative Badge', icon: <FaStar /> },
+          { badgeName: 'Engineering Badge', icon: <FaWrench /> },
+          { badgeName: 'Coding Badge', icon: <FaLaptopCode /> },
+          { badgeName: 'Builder Badge', icon: <FaToolbox /> },
+        ],
       };
       setStudentInfo(data);
     };
@@ -135,26 +37,30 @@ const StudentDetail = () => {
   }
 
   return (
-    <div className="student-detail-container">
-      {/* 左侧签到列表 */}
-      <div className="sign-in-list">
-        <h3>Daily List of People</h3>
-        {/* 假设这里是签到记录 */}
-        <ul>
-          <li>Emily Bob - Signed in at 9:54:20 AM</li>
-          <li>John Doe - Signed in at 9:30:10 AM</li>
-        </ul>
-      </div>
+    <div className="student-info-container">
+      <div className="student-info-card">
+        {/* 顶部区域：用户头像和邮箱 */}
+        <div className="header-section">
+          <FaUserCircle className="user-icon" />
+          <h2>{studentInfo.email}</h2>
+          <p className={`member-status ${studentInfo.isMember ? 'member' : 'non-member'}`}>
+            {studentInfo.isMember ? 'Member' : 'Non-member'}
+          </p>
+        </div>
 
-      {/* 右侧学生信息 */}
-      <div className="student-info">
-        <h2>{studentInfo.email}</h2>
+        {/* 信息卡片 */}
         <div className="info-block">
+          <FaCalendarAlt className="info-icon" />
           <p><strong>Last Sign In:</strong> {new Date(studentInfo.lastSignIn).toLocaleString()}</p>
-          <p><strong>Member Status:</strong> {studentInfo.isMember ? 'Member' : 'Non-member'}</p>
+        </div>
+
+        <div className="info-block">
+          <FaListAlt className="info-icon" />
           <p><strong>Tags:</strong> {studentInfo.tags.join(', ')}</p>
         </div>
+
         <div className="info-block">
+          <FaCalendarAlt className="info-icon" />
           <p><strong>Upcoming Appointments:</strong></p>
           <ul>
             {studentInfo.upcomingAppointments.map((appointment, index) => (
@@ -162,16 +68,33 @@ const StudentDetail = () => {
             ))}
           </ul>
         </div>
-        <div className="info-block">
+
+        {/* All Trainings Completed */}
+        <div className="info-block training-section">
+          <FaListAlt className="info-icon" />
           <p><strong>All the Training Completed:</strong></p>
-          <ul>
+          <div className="trainings">
             {studentInfo.trainingsCompleted.map((training, index) => (
-              <li key={index}>{training}</li>
+              <div key={index} className="training-box">
+                <p>{training.name}</p>
+                <p>Completed Time: {training.date}</p>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
-        <div className="info-block">
-          <p><strong>Unicorn Badge Level:</strong> {studentInfo.unicornBadgeLevel}</p>
+
+        {/* Unicorn Badges */}
+        <div className="info-block badge-section">
+          <FaCrown className="info-icon" />
+          <p><strong>Unicorn Badges:</strong></p>
+          <div className="badges">
+            {studentInfo.unicornBadges.map((badge, index) => (
+              <div key={index} className="badge-icon">
+                {badge.icon}
+                <p>{badge.badgeName}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
