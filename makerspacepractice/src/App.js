@@ -85,6 +85,7 @@ const App = () => {
   );
 
   return (
+
     <div className="app-container">
        <Header /> {/* 添加Header组件 */}
       <h1>Student Check In</h1>

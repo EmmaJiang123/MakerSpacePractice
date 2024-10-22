@@ -13,14 +13,14 @@ const CheckInTable = ({ checkIns, onRowClick }) => {
           <div className="checkin-info">
             <div className="checkin-name">
               {checkIn.name}
-              {checkIn.isMember && <span className="member-tag"> (Member)</span>}
+              {/* {checkIn.isMember && <span className="member-tag"> (Member)</span>} */}
             </div>
             <div className="checkin-email">{checkIn.studentId}</div>
             <div className="checkin-time">{new Date(checkIn.signInTime).toLocaleString()}</div>
           </div>
-          <div className="member-status">
+          {/* <div className="member-status">
             {checkIn.isMember ? 'Member' : 'Non-member'}
-          </div>
+          </div> */}
         </div>
       ))}
     </div>

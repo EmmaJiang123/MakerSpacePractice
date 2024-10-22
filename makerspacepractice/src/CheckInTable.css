@@ -16,18 +16,7 @@
     transition: transform 0.2s ease, background-color 0.2s ease;
     cursor: pointer;
   }
-  
-  /* 鼠标悬停时的效果，卡片高亮和放大 */
-  .checkin-card:hover {
-    background-color: #e0ffe0; /* 背景色变成绿色 */
-    transform: scale(1.05); /* 稍微放大 */
-  }
-  
-  /* 当行被选中时，背景颜色加深 */
-  .selected-row {
-    background-color: #d0ffd0; /* 深绿色，表示选中状态 */
-  }
-  
+
   /* 学生签到信息的布局 */
   .checkin-info {
     display: flex;
@@ -56,9 +45,6 @@
   */
 
 
-
-
-  
   /* 默认的签到卡片样式 */
 .checkin-list {
   display: flex;
@@ -83,28 +69,9 @@
   border: 2px solid gold; /* 鼠标悬停时的金色边框 */
 }
 
-/* 成员标记 */
-.member-tag {
-  font-weight: bold;
-  color: green; /* 未悬停时，Member标记为绿色 */
-}
-
-/* Member 状态 */
-.member-status {
-  font-size: 12px;
-  color: #555;
-  text-align: right;
-}
-
 /* Non-member的初始状态 */
 .nonmember-card .member-status {
   display: none; /* 非成员时，不显示状态 */
-}
-
-/* 当鼠标悬停时，Non-member 显示为 Non-member */
-.checkin-card:hover .member-status {
-  display: block;
-  color: red; /* 鼠标悬停时显示非成员状态为红色 */
 }
 
 /* Member 卡片的背景色显示 */
@@ -112,7 +79,14 @@
   border-left: 5px solid green; /* 对于成员，左侧显示绿色标记 */
 }
 
+
 /* 鼠标悬停时，Member 显示边框 */
-.member-card:hover .member-tag {
-  color: gold; /* 鼠标悬停时，Member标记变为金色 */
+.nonmember-card:hover {
+
+  background-color: rgb(249, 201, 201); 
+}
+
+/* 鼠标悬停时，高亮和放大 */
+.member-card:hover{
+  background-color: #e0ffe0; /* 高亮为绿色 */
 }

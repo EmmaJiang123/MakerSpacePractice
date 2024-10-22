@@ -56,11 +56,8 @@ h1 {
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-/* 鼠标悬停时，高亮和放大 */
-.checkin-card:hover {
-  background-color: #e0ffe0; /* 高亮为绿色 */
-  transform: scale(1.05); /* 放大 */
-}
+
+
 
 /* Check-in 信息展示样式 */
 .checkin-info {
