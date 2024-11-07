@@ -1,51 +1,3 @@
-/* 整个签到列表布局 */
-.checkin-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  /* 单个学生签到记录作为卡片显示 */
-  .checkin-card {
-    width: 80%;
-    background-color: #f9f9f9;
-    border-radius: 10px; /* 卡片的圆角 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin-bottom: 20px;
-    transition: transform 0.2s ease, background-color 0.2s ease;
-    cursor: pointer;
-  }
-
-  /* 学生签到信息的布局 */
-  .checkin-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  /* 学生姓名 */
-  .checkin-name {
-    font-size: 18px;
-    font-weight: bold;
-    color: #001f3f;
-  }
-  
-  /* 学生邮箱 */
-  .checkin-email {
-    font-size: 16px;
-    color: #555;
-  }
-  
-  /* 签到时间 */
-  .checkin-time {
-    font-size: 14px;
-    color: #888;
-  }
-  */
-
-
-  /* 默认的签到卡片样式 */
 .checkin-list {
   display: flex;
   flex-direction: column;
@@ -63,30 +15,33 @@
   cursor: pointer;
 }
 
-/* 鼠标悬停时的样式 */
 .checkin-card:hover {
-  transform: scale(1.05);
-  border: 2px solid gold; /* 鼠标悬停时的金色边框 */
+  transform: scale(1.05) !important;
+  border: 2px solid gold !important; /* 鼠标悬停时的金色边框 */
 }
 
-/* Non-member的初始状态 */
 .nonmember-card .member-status {
-  display: none; /* 非成员时，不显示状态 */
+  display: none;
 }
 
-/* Member 卡片的背景色显示 */
 .member-card {
-  border-left: 5px solid green; /* 对于成员，左侧显示绿色标记 */
+  border-left: 5px solid green;
 }
 
-
-/* 鼠标悬停时，Member 显示边框 */
 .nonmember-card:hover {
-
-  background-color: rgb(249, 201, 201); 
+  background-color: rgb(249, 201, 201);
 }
 
-/* 鼠标悬停时，高亮和放大 */
-.member-card:hover{
-  background-color: #e0ffe0; /* 高亮为绿色 */
+.member-card:hover {
+  background-color: #e0ffe0;
+}
+
+.checkin-card:active {
+  transform: scale(1.05);
+  border: 2px solid gold;
+}
+
+.selected-row {
+  background-color: #f0f0f0; /* 点击后背景色变淡 */
+  border: 2px solid #ccc; /* 点击后边框 */
 }
