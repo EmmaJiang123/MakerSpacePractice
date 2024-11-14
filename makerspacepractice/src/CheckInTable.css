@@ -17,7 +17,7 @@
 
 .checkin-card:hover {
   transform: scale(1.05) !important;
-  border: 2px solid gold !important; /* 鼠标悬停时的金色边框 */
+  border: 2px solid gold !important; /* golden line */
 }
 
 .nonmember-card .member-status {
@@ -42,6 +42,6 @@
 }
 
 .selected-row {
-  background-color: #f0f0f0; /* 点击后背景色变淡 */
-  border: 2px solid #ccc; /* 点击后边框 */
+  background-color: #f0f0f0; /* after click */
+  border: 2px solid #ccc; 
 }

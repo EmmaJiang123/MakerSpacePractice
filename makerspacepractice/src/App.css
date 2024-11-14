@@ -1,6 +1,7 @@
 .app-container {
   padding: 20px;
   font-family: Arial, sans-serif;
+  padding-top: 70px; /* Will not be covered by Header */
 }
 
 h1 {
@@ -9,34 +10,31 @@ h1 {
   text-align: center;
 }
 
-/* 搜索框容器 */
 .search-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 40px; /* distance between the search box and checkInTable */
   gap: 20px;
 }
 
-/* 搜索框样式，圆角边框 */
 .search-box {
   width: 300px;
   padding: 10px;
   border: 2px solid #ccc;
-  border-radius: 25px; /* 圆角边框 */
+  border-radius: 25px;
   font-size: 16px;
   outline: none;
 }
 
 .search-box:focus {
-  border-color: #4caf50; /* 选中时边框颜色变成绿色 */
+  border-color: #4caf50;
 }
 
-
-/* Check-in 列表 */
 .checkin-list {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 20px; /* Distance between the table and search box */
 }
 
 .filters {
@@ -45,21 +43,16 @@ h1 {
   margin-bottom: 20px;
 }
 
-/* 每条Check-in 信息作为卡片展示 */
 .checkin-card {
   width: 80%;
   background-color: #f9f9f9;
-  border-radius: 10px; /* 圆角边框 */
+  border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   margin-bottom: 20px;
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-
-
-
-/* Check-in 信息展示样式 */
 .checkin-info {
   display: flex;
   justify-content: space-between;
@@ -88,8 +81,6 @@ input {
   border-radius: 4px;
   width: 300px;
 }
-
-
 
 button {
   padding: 8px 16px;
@@ -124,11 +115,7 @@ th {
 }
 
 .selected-row {
-  background-color: #d3d3d3; /* 高亮选中的行 */
-}
-
-.app-container, .student-detail-container {
-  padding-top: 70px; /* 根据 header 的高度调整此数值，确保内容不会被覆盖 */
+  background-color: #d3d3d3;
 }
 
 body {
@@ -137,7 +124,22 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* 为了确保 header 紧贴页面顶部 */
 html, body {
   height: 100%;
+}
+
+.main-content {
+  display: flex;
+}
+
+.left-panel {
+  width: 40%;
+  padding-right: 10px;
+  padding-bottom: 20px; 
+  border-right: 1px solid #ccc;
+}
+
+.right-panel {
+  width: 60%;
+  padding-left: 10px;
 }

@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; // 用于页面跳转
 import CheckInTable from './CheckInTable';
-import Header from './Header'; // 引入 Header 组件
+import StudentDetail from './StudentDetail';
+import Header from './Header';
 import './App.css';
 
 const App = () => {
   const [checkIns, setCheckIns] = useState([]);
+  const [selectedStudentId, setSelectedStudentId] = useState(null); // record student ID
   const [searchTerm, setSearchTerm] = useState('');
-  const [sortType, setSortType] = useState('lastSignIn'); // 默认按 Last Sign In 排序
-  const [filter, setFilter] = useState(''); // 存储单个选择的过滤条件
+  const [sortType, setSortType] = useState('lastSignIn');
+  const [filter, setFilter] = useState('');
 
-  const navigate = useNavigate(); // 用于页面跳转
-
-  // 模拟获取签到数据
+  // mock the id got
   useEffect(() => {
     const fetchData = async () => {
       const data = [
@@ -36,11 +35,11 @@ const App = () => {
   };
 
   const handleFilterChange = (e) => {
-    setFilter(e.target.value); // 只存储单个选择的过滤条件
+    setFilter(e.target.value);
   };
 
   const handleRowClick = (studentId) => {
-    navigate(`/student/${studentId}`); // 单击时直接跳转到学生详情页面
+    setSelectedStudentId(studentId); 
   };
 
   const applyFilters = (data) => {
@@ -60,20 +59,18 @@ const App = () => {
     });
   };
 
-  // 根据排序类型对数据进行排序
   const getSortedCheckIns = (data) => {
     return data.sort((a, b) => {
       if (sortType === 'name') {
-        return a.name.localeCompare(b.name); // 按姓名排序
+        return a.name.localeCompare(b.name);
       } else if (sortType === 'studentId') {
-        return a.studentId.localeCompare(b.studentId); // 按学生 ID 排序
+        return a.studentId.localeCompare(b.studentId);
       } else {
-        return new Date(b.signInTime) - new Date(a.signInTime); // 最新签到时间排在前面
+        return new Date(b.signInTime) - new Date(a.signInTime);
       }
     });
   };
 
-  // 搜索、过滤和排序后的数据
   const filteredAndSortedCheckIns = getSortedCheckIns(
     applyFilters(
       checkIns.filter(
@@ -85,37 +82,48 @@ const App = () => {
   );
 
   return (
-
     <div className="app-container">
-       <Header /> {/* 添加Header组件 */}
-      <h1>Student Check In</h1>
-      <div className="search-container">
-        <input
-          type="text"
-          className="search-box"
-          placeholder="Search for Student Name, Email"
-          value={searchTerm}
-          onChange={handleSearch}
-        />
-        <select value={sortType} onChange={handleSort}>
-          <option value="lastSignIn">Sort by: Last Sign In</option>
-          <option value="name">Sort by: Name</option>
-          <option value="studentId">Sort by: Email</option>
-        </select>
+      <Header />
+      <h1 value = "2b" >Student Check In</h1>
+      <div className="main-content">
+        {/* left side CheckInTable */}
+        <div className="left-panel">
+          <input
+            type="text"
+            className="search-box"
+            placeholder="Search for Student Name, Email"
+            value={searchTerm}
+            onChange={handleSearch}
+          />
+          <select value={sortType} onChange={handleSort}>
+            <option value="lastSignIn">Sort by: Last Sign In</option>
+            <option value="name">Sort by: Name</option>
+            <option value="studentId">Sort by: Email</option>
+          </select>
 
-        <select value={filter} onChange={handleFilterChange}>
-          <option value="">No Filter</option>
-          <option value="day">Filter: Last Day</option>
-          <option value="week">Filter: Last Week</option>
-          <option value="month">Filter: Last Month</option>
-        </select>
+          <select value={filter} onChange={handleFilterChange}>
+            <option value="">No Filter</option>
+            <option value="day">Filter: Last Day</option>
+            <option value="week">Filter: Last Week</option>
+            <option value="month">Filter: Last Month</option>
+          </select>
+
+          <CheckInTable
+            checkIns={filteredAndSortedCheckIns}
+            onRowClick={handleRowClick}
+          />
+          <p>Total Number of Sign-ins in Selected Time Range: {filteredAndSortedCheckIns.length}</p>
+        </div>
+
+        {/* right side StudentDetail */}
+        <div className="right-panel">
+          {selectedStudentId ? (
+            <StudentDetail studentId={selectedStudentId} />
+          ) : (
+            <p>Select a student to view details</p>
+          )}
+        </div>
       </div>
-
-      <CheckInTable
-        checkIns={filteredAndSortedCheckIns}
-        onRowClick={handleRowClick}
-      />
-      <p>Total Number of Sign-in in the Selected Time Range: {filteredAndSortedCheckIns.length}</p>
     </div>
   );
 };

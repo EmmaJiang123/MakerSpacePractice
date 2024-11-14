@@ -1,4 +1,4 @@
-/* 让页面居中并有充足的空间 */
+/* align the page in the middle of the right */
 .student-info-container {
   display: flex;
   justify-content: center;
@@ -8,7 +8,7 @@
   padding: 20px;
 }
 
-/* 学生信息卡片 */
+/* Student info card */
 .student-info-card {
   background-color: white;
   width: 60%;
@@ -19,7 +19,7 @@
 
 @media (max-width: 768px) {
   .student-info-card {
-    width: 90%; /* 调整较小屏幕上的卡片宽度 */
+    width: 90%; /* adjust the card in small screen */
   }
 }
 
@@ -58,7 +58,7 @@
   color: white;
 }
 
-/* 信息块样式 */
+/* style of info */
 .info-block {
   background-color: #f8f9fa;
   border-radius: 10px;
@@ -81,7 +81,7 @@
   color: #007bff;
 }
 
-/* 列表项样式 */
+/* table style */
 ul {
   list-style: none;
   padding-left: 0;
@@ -96,7 +96,7 @@ ul li {
 .training-section .trainings {
   display: flex;
   gap: 15px;
-  flex-wrap: wrap; /* 允许培训卡片换行 */
+  flex-wrap: wrap; 
 }
 
 .training-box {
@@ -104,7 +104,7 @@ ul li {
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: calc(50% - 10px); /* 两个项目时自动调整宽度 */
+  width: calc(50% - 10px); /* auto adjust width */
   margin-bottom: 10px;
 }
 
@@ -118,7 +118,7 @@ ul li {
 .badge-section .badges {
   display: flex;
   gap: 20px;
-  flex-wrap: wrap; /* 允许badges换行 */
+  flex-wrap: wrap; /* allow badges move to next line */
 }
 
 .badge-icon {
@@ -126,18 +126,18 @@ ul li {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: calc(25% - 10px); /* 四个badge时调整宽度 */
+  width: calc(25% - 10px); 
 }
 
 @media (max-width: 768px) {
   .badge-icon {
-    width: 45%; /* 小屏幕时两个一行 */
+    width: 45%; 
   }
 }
 
 .badge-icon svg {
   font-size: 40px;
-  color: #ffd700; /* 金色勋章 */
+  color: #ffd700; /* gold icon */
 }
 
 .badge-icon p {
