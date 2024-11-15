@@ -115,7 +115,7 @@ const StudentDetail = ({ studentId }) => {
     const fetchStudentData = async () => {
       // 模拟后端获取数据
       const data = {
-        email: `${studentId}@example.com`,
+        email: `${studentId}`,
         lastSignIn: '2024-09-20T09:54:20',
         isMember: true,
         tags: ['Engineering', 'Lab Access'],

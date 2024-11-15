@@ -6,7 +6,7 @@ import './App.css';
 
 const App = () => {
   const [checkIns, setCheckIns] = useState([]);
-  const [selectedStudentId, setSelectedStudentId] = useState(null); // record student ID
+  const [selectedStudentId, setSelectedStudentId] = useState(null); 
   const [searchTerm, setSearchTerm] = useState('');
   const [sortType, setSortType] = useState('lastSignIn');
   const [filter, setFilter] = useState('');
@@ -84,14 +84,14 @@ const App = () => {
   return (
     <div className="app-container">
       <Header />
-      <h1 value = "2b" >Student Check In</h1>
+      <h1 value = "2b" >Member Check In</h1>
       <div className="main-content">
         {/* left side CheckInTable */}
         <div className="left-panel">
           <input
             type="text"
             className="search-box"
-            placeholder="Search for Student Name, Email"
+            placeholder="Search for Member Name, Email"
             value={searchTerm}
             onChange={handleSearch}
           />
