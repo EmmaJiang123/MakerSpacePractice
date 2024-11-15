@@ -1,39 +1,3 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-// import App from './App';
-// import StudentDetail from './StudentDetail'; 
-
-// ReactDOM.render(
-//   <Router >
-//     <Routes>
-//       {/* 将根路径重定向到 /，让 basename 添加 /sign_in 前缀 */}
-//       <Route path="/" element={<App />} />
-//       <Route path="/student/:id" element={<StudentDetail />} />
-//     </Routes>
-//   </Router>,
-//   document.getElementById('root')
-// );
-
-
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-
-// import App from './App';
-// import StudentDetail from './StudentDetail'; 
-
-// ReactDOM.render(
-//   <Router >
-//     <Routes>
-//       {/* 将根路径重定向到 /，让 basename 添加 /sign_in 前缀 */}
-//       <Route path="/" element={<App />} />
-//       <Route path="/student/:id" element={<StudentDetail />} />
-//     </Routes>
-//   </Router>,
-//   document.getElementById('root')
-// );
-
 
 import React from 'react';
 import ReactDOM from 'react-dom';
